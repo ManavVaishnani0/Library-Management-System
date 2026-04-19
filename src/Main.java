@@ -1,4 +1,4 @@
-public class Main {
+/*public class Main {
 
     // ------------------ isBookAvailable ------------------
 
@@ -148,5 +148,44 @@ public class Main {
         test_isValidUser_pass2();
         test_isValidUser_pass3();
         test_isValidUser_fail1();
+    }
+}*/
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("---- System Testing ----");
+
+        // Test 1: User Validation
+        User u = new User(101, "Manav");
+        System.out.println("User Valid: " + u.isValidUser());
+
+        User u2 = new User(-1, "Test");
+        System.out.println("User Valid: " + u2.isValidUser());
+
+        // Test 2: Book Availability
+        Book b = new Book(1, "Java", 2);
+        System.out.println("Book Available: " + b.isAvailable());
+
+        Book b2 = new Book(2, "C++", 0);
+        System.out.println("Book Available: " + b2.isAvailable());
+
+        // Test 3: Issue Book
+        boolean issued = b.issueBook();
+        System.out.println("Book Issued: " + issued + ", Copies: " + b.copies);
+
+        boolean issued2 = b2.issueBook();
+        System.out.println("Book Issued: " + issued2 + ", Copies: " + b2.copies);
+
+        // Test 4: Return Book
+        b.returnBook();
+        System.out.println("Book Returned, Copies: " + b.copies);
+
+        // Test 5: Fine Calculation
+        IssueTransaction t = new IssueTransaction(1, 4);
+        System.out.println("Fine: " + t.calculateFine());
+
+        IssueTransaction t2 = new IssueTransaction(2, -2);
+        System.out.println("Fine: " + t2.calculateFine());
     }
 }
