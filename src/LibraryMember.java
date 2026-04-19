@@ -1,10 +1,10 @@
 class LibraryMember extends User {
 
-    void searchBook(String title) {
-        System.out.println("Searching: " + title);
+    public LibraryMember(int userId, String name) {
+        super(userId, name);
     }
 
-    void reserveBook() {
-        System.out.println("Book reserved");
+    void searchBook(String title) {
+        System.out.println("Searching book: " + title);
     }
 }
